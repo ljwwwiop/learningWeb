@@ -4,8 +4,7 @@ import os
 import sys
 '''  
     账户 ljw 密码 lianjiawei123
-    26讲 32:17时刻
-    
+
     python manage.py makemigrations 编译数据库 1
     python manage.py migrate 跟新数据库 2
     python manage.py runserver 127.0.0.1:8000
@@ -27,10 +26,16 @@ import sys
     requests.get  -- 请求体
     requests.post  -- 请求头中的url中
     requests.method -- 请求method方法
+    
+    服务器更新配置 apt-get install nginx
+    wsgi + 实现交互
+        uwsgi --ini ...启动
+    nginx + 静态渲染内容:
+        service nginx restart
 '''
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'learningWeb.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'learningWeb.settings.development')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

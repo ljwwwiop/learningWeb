@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from first_demo.views import index,content_list
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,34 +23,34 @@ from django.shortcuts import HttpResponse,render,redirect
 
 
 
-def good(request):
-
-    # return HttpResponse("<input type='text'/>")
-    if request.method =='GET':
-        return render(request,'test.html')
-    # post 请求走这里
-    else:
-        # 用户POST请求提交的东西 request.POST 生成一个字典
-        u = request.POST.get('user')
-        p = request.POST.get('pwd')
-        print(u,p)
-        if u =='root' and p =='123456':
-            # 登录成功后 redirect 跳转, 也可以直接url中的写入
-            # return redirect('https://www.taobao.com')
-            return redirect('/index/')
-        else:
-            # json 流数据出入 传出
-            # 失败后 {'msg':''} 在html标签中写入{{msg}} 传入键值, name.0 取列表值,user_dict.k1 取字典
-            return render(request,'test.html',
-                          {
-                              'msg':'用户名密码错误!',
-                              'name':['撒比','的水平','啊大苏打'],
-                              'user_dict':{'k1':'v1','k2':'v2'},
-                              'user_list':[{'id':1,'name':'alex','email':'@qq.com'},
-                                           {'id': 2, 'name': 'kitty', 'email': '@qq.com'},
-                                           {'id': 3, 'name': 'ben', 'email': '@qq.com'}
-                                           ]
-                                               })
+# def good(request):
+#
+#     # return HttpResponse("<input type='text'/>")
+#     if request.method =='GET':
+#         return render(request,'test.html')
+#     # post 请求走这里
+#     else:
+#         # 用户POST请求提交的东西 request.POST 生成一个字典
+#         u = request.POST.get('user')
+#         p = request.POST.get('pwd')
+#         print(u,p)
+#         if u =='root' and p =='123456':
+#             # 登录成功后 redirect 跳转, 也可以直接url中的写入
+#             # return redirect('https://www.taobao.com')
+#             return redirect('/index/')
+#         else:
+#             # json 流数据出入 传出
+#             # 失败后 {'msg':''} 在html标签中写入{{msg}} 传入键值, name.0 取列表值,user_dict.k1 取字典
+#             return render(request,'test.html',
+#                           {
+#                               'msg':'用户名密码错误!',
+#                               'name':['撒比','的水平','啊大苏打'],
+#                               'user_dict':{'k1':'v1','k2':'v2'},
+#                               'user_list':[{'id':1,'name':'alex','email':'@qq.com'},
+#                                            {'id': 2, 'name': 'kitty', 'email': '@qq.com'},
+#                                            {'id': 3, 'name': 'ben', 'email': '@qq.com'}
+#                                            ]
+#                                                })
 
 # 路由关系
 urlpatterns = [
