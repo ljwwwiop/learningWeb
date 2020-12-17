@@ -14,6 +14,7 @@ import sys
         - wsgi.pu 用于定义django用socket,wsgiref,uwsgi
     
     创建 project
+    
     配置:
      template 目录
      template 模板路劲配置

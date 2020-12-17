@@ -26,7 +26,7 @@ DEBUG = False
 
 
 # 服务器ip地址
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['47.98.116.255']
 
 DATABASES_PASSWORD = os.environ['DATABASES_PASSWORD']
 # Database
@@ -67,8 +67,6 @@ EMAIL_USE_SSL = True # 开启安全连接ssl
 ADMINS = (
     ('admin','1206957838@qq.com'),
 )
-
-
 
 # 日志文件
 # 修改权限命令 文件可读可写，同组的人也是可读可写

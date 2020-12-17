@@ -20,6 +20,8 @@ from .base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '+2&_^w3dm^87f$%xy^dj&@&j4a(8+q5f2ug2j$l$0ziv=!9y_8'
+# SECRET_KEY = os.environ['SECRET_KEY']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -112,7 +112,8 @@ USE_TZ = True
 # 去使用时候的前缀是/static/
 STATIC_URL = '/static/'
 # 部署时候 打开注释
-# STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'static_collected')
+
 # 写入静态文件路径 css的 , 号一定要加
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
